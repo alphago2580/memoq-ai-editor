@@ -6,6 +6,7 @@
     <UseWPF>true</UseWPF>
     <UseWindowsForms>true</UseWindowsForms>
     <Nullable>enable</Nullable>
+    <Authors>alphago2580</Authors>
   </PropertyGroup>
 
   <ItemGroup>
