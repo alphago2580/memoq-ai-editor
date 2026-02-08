@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>MemoQAISidecarPlugin</AssemblyName>
+    <RootNamespace>MemoQAISidecarPlugin</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- MemoQ SDK References (Place SDK DLLs in ./lib folder) -->
+    <Reference Include="MemoQ.PreviewInterfaces">
+      <HintPath>lib\MemoQ.PreviewInterfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MemoQ.Addins.Common">
+      <HintPath>lib\MemoQ.Addins.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+</Project>

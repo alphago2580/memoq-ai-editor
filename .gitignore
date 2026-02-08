@@ -1,0 +1,27 @@
+# Build outputs
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.cache
+
+# Frontend
+node_modules/
+Frontend/editor.bundle.js
+Frontend/package-lock.json
+
+# MemoQ SDK (do not commit)
+MemoQPlugin/lib/*.dll
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db

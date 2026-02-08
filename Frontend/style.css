@@ -1,0 +1,166 @@
+:root {
+    /* Base Colors */
+    --bg-main: #1e1e1e;
+    --bg-panel: #252526;
+    --bg-input: #3c3c3c;
+
+    /* Text Colors */
+    --text-main: #cccccc;
+    --text-muted: #858585;
+    --text-ghost: #6a9955;
+
+    /* Accents */
+    --accent-primary: #007acc;
+    --accent-hover: #0098ff;
+    --border-color: #454545;
+
+    /* Typography */
+    --font-code: 'Fira Code', 'Consolas', 'Courier New', monospace;
+    --font-ui: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font-ui);
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Panel - Source Text Display */
+.header-panel {
+    padding: 12px 16px;
+    background-color: var(--bg-panel);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.source-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.source-content {
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+/* Editor Wrapper */
+.editor-wrapper {
+    flex: 1;
+    position: relative;
+    background-color: var(--bg-main);
+    overflow: hidden;
+}
+
+#editor {
+    height: 100%;
+    width: 100%;
+}
+
+/* CodeMirror Overrides */
+.cm-editor {
+    height: 100% !important;
+    font-family: var(--font-code) !important;
+    font-size: 16px !important;
+    background-color: var(--bg-main) !important;
+    color: var(--text-main) !important;
+}
+
+.cm-scroller {
+    padding: 16px !important;
+    line-height: 1.6 !important;
+}
+
+.cm-content {
+    caret-color: var(--accent-primary) !important;
+}
+
+.cm-cursor {
+    border-left-color: var(--accent-primary) !important;
+}
+
+.cm-focused {
+    outline: none !important;
+}
+
+/* Ghost Text Widget */
+.ghost-text-widget {
+    color: var(--text-ghost) !important;
+    opacity: 0.7;
+    font-style: italic;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Status Bar */
+.status-bar {
+    height: 28px;
+    background-color: var(--accent-primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    font-size: 0.8rem;
+    justify-content: space-between;
+    font-weight: 500;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Loading Spinner */
+.spinner {
+    width: 12px;
+    height: 12px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    display: none;
+}
+
+.spinner.active {
+    display: block;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
